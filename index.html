@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="description" content=""> -->
+    <!-- <meta name="keywords" content=""> -->
+    <!-- <meta name="author" content=""> -->
+
+    <!-- Title -->
+    <title>Reporte</title>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/maplibre-gl@3.3.0/dist/maplibre-gl.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.umd.min.js"></script>
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://unpkg.com/maplibre-gl@3.3.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="top-nav-bar">
+        <div>
+            <img src="./assets/smarker.png" alt="logo">
+            <h1>nome</h1>
+            <p>Como funciona?</p>
+            <p>Dúvidas frequentes</p>
+            <p>Ajuda</p>
+        </div>
+        <div>
+            <button>Entre</button>
+            <button>Cadastre-se</button>
+        </div>
+    </div>
+    <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
+
+    <!-- A button to open the popup form -->
+    <button class="open-button" onclick="openForms()">Open Form</button>
+
+    <!-- The form -->
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+            <h1>Adicionar Marcador</h1>
+
+            <label for="longitude"><b>longitude</b></label>
+            <input id="long" type="text" placeholder="Enter longitude" name="longitude" required>
+
+            <label for="latitude"><b>latitude</b></label>
+            <input id="lat" type="text" placeholder="Enter latitude" name="latitude" required>
+
+            <button type="button" class="btn" onclick="submitForm()">save</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
